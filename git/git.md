@@ -10,9 +10,9 @@
 
 ## 3. Open-source project
 
-https://github.com/python/cpython
-https://github.com/tensorflow/tensorflow
-https://github.com/JuliaLang/julia
+https://github.com/python/cpython  
+https://github.com/tensorflow/tensorflow  
+https://github.com/JuliaLang/julia  
 https://github.com/golang/go
 
 ## 4. Git Process and Command
@@ -55,7 +55,7 @@ github 저장소를 활용해 정적인 사이트 호스팅이 가능
 ```
 $ username.github.io
 ```
-http://tech.kakao.com/
+http://tech.kakao.com/  
 https://spoqa.github.io/
 
 ## 9. Create new repo throuch github
@@ -80,59 +80,58 @@ $ git push origin master
   - Node.js를 안다면 커스터마이즈가 쉬움
   - 빠른 속도로 사용자 증가 중
 
-  ## 11. Branch
-  master branch
-  ```
-  print('hello world!')
-  ```
-  another branch
-  ```
-  for i in range(1,10) : print('hello world for the %s times!' % i)
-  ```
-  Show availabel local branch
-  ```
-  $ git branch
-  ```
-  Show available remjote branch
-  ```
-  $ git branch -r
-  ```
-  Show available All branch
-  ```
-  $ git branch -a
-  ```
-  Create branch
-  ```
-  $ git branch stem
-  ```
-  Checkout branch
-  ```
-  $ git checkout stem
-  ```
-  Create & Checkout branch
-  ```
-  git checkout -b new-stem
-  ```
-  make changes inside `readme.md`
-  ```
-  $ git commit -a -m 'edit readme.md'
-  $ git checkout master
-  ```
-  merge branch
-  ```
-  $ git merge stem
-  ```
-  delete branch
-  ```
-  $ git branch -D stem
-  ``` 
-  push with specified remote branch
-  ```
-  $ git push origin stem
-  ```
-  see the difference between two branches
-  ```
-  $ git diff master stem
-  ```
-  
+## 11. Branch
+master branch
+```
+print('hello world!')
+```
+another branch
+```
+for i in range(1,10) : prin('helloworld for the %s times!'% i)
+```
+Show availabel local branch
+```
+$ git branch
+```
+Show available remote branch
+```
+$ git branch -r
+```
+Show available All branch
+```
+$ git branch -a
+```
+Create branch
+```
+$ git branch stem
+```
+Checkout branch
+```
+$ git checkout stem
+```
+Create & Checkout branch
+```
+git checkout -b new-stem
+```
+make changes inside `readme.md`
+```
+$ git commit -a -m 'editreadme.md'
+$ git checkout master
+```
+merge branch
+```gi
+$ git merge stem
+```
+delete branch
+```
+$ git branch -D stem
+``` 
+push with specified remote branch
+```
+$ git push origin stem
+```
+see the difference between two branches
+```
+$ git diff master stem
+```
 
