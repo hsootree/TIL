@@ -1,0 +1,26 @@
+
+/* 박스4 정렬 */
+body {
+  margin: 0;
+} 
+
+div {
+  float: left;
+  width: 22.75%;
+  height: 200px;
+  margin-bottom: 2%;
+  text-align: center;
+  color: #fff;
+  font-size: 3em;
+  line-height: 200px;
+  background-color: #999;
+}
+/*
+div:not(:nth-of-type(4n-3)) {
+  margin-left: 3%;
+}
+n이 1부터 시작한다고 알았을때 수식이었으나 n이 0부터 시작하므로 수식이 변경됨.
+*/
+div:not(:nth-of-type(4n+1)) {
+  margin-left: 3%;
+}

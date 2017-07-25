@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>layout_test</title>
+  <style>
+ /* html, body {
+    height: 100%;
+  } */
+  .container {
+    position: relative;
+    width: 50%;
+    height: 400px;
+    background-color: #999;
+  }
+  .box{
+    position: absolute;
+    /* 위에서 가운데 정렬, 왼쪽에서부털 가운데 정렬 *//*
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    /*
+    transform: translate(-50%); /* array center  -- 가운데 정렬 */
+    width: 100px;
+    height: 100px;
+    background-color: #222;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      TEXT
+    </div>
+  </div>
+</body>
+</html>

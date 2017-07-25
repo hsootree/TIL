@@ -1,0 +1,33 @@
+
+/* 박스5 정렬 */
+body {
+  margin: 0;
+} 
+div {
+  height: 20px;
+  margin-bottom: 2%;
+  text-align: center;
+  color: #fff;
+  font-size: 3em;
+  line-height: 200px;
+  background-color: #666;
+  box-sizing: border-box;
+  border: 1px solid #444;
+}
+
+.box12 {
+  float: left;
+  width: 7.416%;
+}
+/*
+div:not(:nth-of-type(5n-4)) {
+  margin-left: 2.5%;
+}
+n이 1부터 시작한다고 알았을때 수식이었으나 n이 0부터 시작하므로 수식이 변경됨.
+*/
+.box12:not(:nth-of-type(11n+1)) {
+  margin-left: 1%;
+}
+
+
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible">
+  <title>Selector</title>
+  <!--
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    -->
+ 
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" target="_self">CSS Selector_Home</a></li>
+        <li><a href="selector.html" target="_self">selector test</a></li>
+        <li><a href="box3.html" target="_self">box3</a></li>
+        <li><a href="box4.html" target="_self">box4</a></li>
+        <li><a href="box5.html" target="_self">box5</a></li>
+        <li><a href="box6.html" target="_self">box6</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="style_cs">
+    <h1>Hello World!</h1>
+    <p> This paragraph is styled with CSS.</p>
+  </div>
+
+  <h2>1. 전체 셀렉터 (Universal Selector)</h2>
+  <div id="UniSel">
+    <h3>모든 요소를 선택</h3>
+    <div class="container">
+      <p id="p1">모든 요소를 선택하여 색상을 적용해 본다.</p>
+      <p id="p2">paragraph 2</p>
+    </div>
+    <p>paragraph 3</p>
+   </div>
+
+  <h2>2. 태그 셀렉터 (Type Selector)</h2>
+  <!-- 영문에서는 type Selector 라고 하는데 국내에서는 태그로 이해하여 태그라 씀. w3c에서 확인 필요함.!!!!! -->
+  <div id="TagSel">
+    <h3>모든 p 태그 요소를 선택</h3>
+    <div>
+      <p>모든 p 태그 요소를 선택하여 색상을 적용해 본다.</p>
+      <p>paragraph 2</p>
+    </div>
+    <p>paragraph 3</p>
+  </div>
+
+  <h2>3. ID 셀렉터 (ID Selector</h2>
+  <div id="IdSel">
+    <h3>id 어트리뷰트 값이 p1인 요소를 선택</h3>
+    <div>
+      <p id="p1">특정 id 어트리뷰트 값이 p1인 요소를 선택하여 색상을 적용해 본다.</p>
+      <p>paragraph 2</p>
+    </div>
+    <p>paragraph 3</p>
+  </div>
+  <!-- 에밋 사용 괄호 안의 내용 확인 
+  h2+div#IdSel>h3+div>p*2+p
+  <h2></h2>
+  <div id="IdSel">
+    <h3></h3>
+    <div>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+  h2+div#IdSel>h3+(div>p*2)+p  
+  <h2></h2>
+  <div id="IdSel">
+    <h3></h3>
+    <div>
+      <p></p>
+      <p></p>
+    </div>
+    <p></p>
+  </div> 
+  -->
+  <h2>4. 클래스 셀렉터 (Class Selector)</h2>
+  <div id="ClassSel">
+    <h3>.class 어트리뷰트 값</h3>
+    <div class="container">
+      <p>class 어트리뷰트 값을 지정하여 일치하는 요소를 선택한다. class 어트리뷰트 값은 중복될 수 있다.</p>
+      <p id="p2">class 어트리뷰트 값이 container인 모든 요소를 선택</p>
+    </div>
+    <p>color 어트리뷰트는 자식 요소에 상속된다.</p>
+    <p>not supported in IE</p> <!--IE 에는 적용이 안된다는.. -->
+    <p>class 어트리뷰트 값은 공백으로 구분하여 여러개 지정할 수 있는데 이것은 ,<strong>재사용</strong>의 측면에서 유용하다.</p>
+    <p class="text-center">center</p>
+    <p class="text-large text-red">Large Red</p>
+    <p class="text-center text-large text-blue">Center Large  lue</p>
+  </div>  
+  
+  <h2>5. 어트리뷰트 셀렉터 (Attribute Selector)</h2>
+  <div id="AtSel">
+    <h3>셀렉터[어트리뷰트]</h3>
+    <div>
+      <p>a 요소 중에 href 어트리뷰트를 갖는 모든 요소</p>
+      <p><a href="http://www.poiemaweb.com">Poiemaweb.com</a></p>
+      <p><a href="http://www.google.com" target="_blank">google.com</a></p>
+      <p><a href="http://www.naver.com" target="_top">naver.com</a></p>
+    </div>
+    <h3>셀렉터[어트리뷰트="값"]</h3>
+    <div>
+      <p>a 요소 중에 target 어트리뷰트의 값이 "_blank"인 모든 요소</p>
+      <p><a href="http://www.poiemaweb.com">Poiemaweb.com</a></p>
+      <p><a href="http://www.google.com" target="_blank">google.com</a></p>
+      <p><a href="http://www.naver.com" target="_top">naver.com</a></p>
+    </div>
+    <h3>셀렉터[어트리뷰트~="값"]</h3>
+    <div>
+      <p>지정된 어트리뷰트의 값이 지정된 값을 (공백으로 분리된) 단어로 포함하는 요소를 선택한다.</p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+
+
+
+
+<section id="oftype" title="부모 요소의 자식 요소중 n번째 등장하는 자식 요소">
+<h2>This is a heading</h2>
+<p>The first paragraph.</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph,</p>
+<div>
+  <h3></h3>
+  <p>This is a heading</p>
+  <p>The first paragraph.</p>
+  <p>The third paragraph.</p>
+  <p>The fourth paragraph.</p>
+</div>
+
+
+</body>
+</html>

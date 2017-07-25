@@ -1,0 +1,108 @@
+
+body {
+  background-color: grey;
+  color: blue;
+}
+p {
+  font-size: 1.2em;
+}
+*, *.after, *.before{
+
+}
+p {
+  color: red;
+}
+
+ /* p 요소 중에 lang 어트리뷰트 값이 "en"과 일치하거나 "en-"로 시작하는 요소 */
+p[lang|="en"] { 
+  color: red; 
+}
+
+/* a 요소 중에 href 어트리뷰트 값이 "https://"로 시작하는 요소 */
+a[href^="https://"] { 
+  color: red; 
+}
+
+/* a 요소 중에 href 어트리뷰트 값이 ".html"로 끝나는 요소 */
+a[href$=".html"] { 
+  color: red; 
+}
+/* div 요소의 후손요소 중 p 요소 */
+div p {
+  color: red;
+}
+/* div 요소의 자식요소 중 p 요소 */
+div > p {
+   color: red; 
+}
+
+/* p 요소의 형제 요소 중에 p 요소 바로 뒤에 위치하는 ul 요소를 선택한다. */
+p + ul { 
+   color: red; 
+}
+ /* p 요소의 형제 요소 중에 p 요소 뒤에 위치하는 ul 요소를 모두 선택한다.*/
+p ~ ul {
+  color: red; 
+}
+
+/* a 요소가 hover 상태일 때 */
+a:hover {
+  color: red; 
+  }
+
+/* input 요소가 focus 상태일 때 */
+input:focus { 
+  background-color: yellow; 
+}
+
+/* input 요소가 사용 가능한 상태일 때,input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
+    input:enabled + span {
+      color: blue;
+    }
+    /* input 요소가 사용 불가능한 상태일 때,input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
+    input:disabled + span {
+      color: gray;
+      text-decoration: line-through;
+    }
+    /* input 요소가 체크 상태일 때, input 요소 바로 뒤에 위치하는 인접 형제 span 요소를 선택 */
+    input:checked + span {
+      color: red;
+    }
+/* p 요소 중에서 첫번째 자식을 선택 */
+    p:first-child { color: red; }
+
+/* p 요소 중에서 마지막 자식을 선택 */
+/* body 요소의 두번째 p 요소는 마지막 자식 요소가 아니다.body 요소의 마지막 자식 요소는 div 요소이다. */
+    p:last-child { color: blue; }
+
+ /* ol 요소의 자식 요소인 li 요소 중에서 짝수번째 요소만을 선택 */
+    ol > li:nth-child(2n)   { color: orange; }
+/* ol 요소의 자식 요소인 li 요소 중에서 홀수번째 요소만을 선택 */
+    ol > li:nth-child(2n+1) { color: green; }
+
+/* ol 요소의 자식 요소인 li 요소 중에서 첫번쨰 요소만을 선택 */
+    ol > li:first-child     { color: red; }
+/* ol 요소의 자식 요소인 li 요소 중에서 마지막 요소만을 선택 */
+    ol > li:last-child      { color: blue; }
+
+    /* ol 요소의 자식 요소인 li 요소 중에서 4번째 요소 요소만을 선택 */
+    ol > li:nth-child(4)    { background: brown; }
+
+    /* ul 요소의 모든 자식 요소 중에서 뒤에서부터 시작하여 홀수번째 요소만을 선택 */
+    ul > :nth-last-child(2n+1) { color: red; }
+    /* ul 요소의 모든 자식 요소 중에서 뒤에서부터 시작하여 짝수번째 요소만을 선택 */
+    ul > :nth-last-child(2n)   { color: blue; }
+
+    /* p 요소의 부모 요소의 자식 요소 중 첫번째 등장하는 p 요소 */
+    p:first-of-type  { color: red; }
+    /* p 요소의 부모 요소의 자식 요소 중 마지막 등장하는 p 요소 */
+    p:last-of-type   { color: blue; }
+    /* p 요소의 부모 요소의 자식 요소 중 앞에서 2번째에 등장하는 p 요소 */
+    p:nth-of-type(2) { color: green; }
+    /* p 요소의 부모 요소의 자식 요소 중 뒤에서 2번째에 등장하는 p 요소 */
+    p:nth-last-of-type(2) { color: orange;}
+
+    /* p 요소 중에서 첫번째 자식을 선택 */
+    p:first-child { background: brown;}
+
+
