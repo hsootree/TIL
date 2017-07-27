@@ -16,11 +16,8 @@ div {
   border: 1px solid #444;
 }
 
-.box12, .box6 {
+.box12, .box6, .box4, .box3, box2 {
   float: left;
-}
-.box12 {
-  width: 7.85%;
 }
 /*
 div:not(:nth-of-type(5n-4)) {
@@ -28,15 +25,40 @@ div:not(:nth-of-type(5n-4)) {
 }
 n이 1부터 시작한다고 알았을때 수식이었으나 n이 0부터 시작하므로 수식이 변경됨.
 */
+.box12 {
+  width: 8.15%;
+}
 .box12:not(:nth-of-type(12n+1)) {
-  margin-left: 0.5%;
+  margin-left: 0.2%;
 }
 
+/* box6  */
 .box6 {
-  width: 16.25%;
+  width: 16.5%;
 }
 .box6:not(:nth-of-type(6n+1)) {
-  margin-left: 0.5%;
+  margin-left: 0.2%;
 }
+
+/* box4 */
+/* 계산은 맞는데 왜 첫번째 마진 값이 적용되는지 모르겠다. 3번째 박스의 왼쪽 마진은 적용되지 않음. 아놔~  */
+.box4 {
+  width: 24.85%;
+}
+.box4:not(:nth-of-type(4n+1)) {
+  margin-left: 0.2%;
+}
+
+/* box3  */
+.box3 {
+  width: 33.2%;
+}
+.box3:not(:nth-of-type(3n+1)) {
+  margin-left: 0.2%;
+}
+
+/* box2  */
+
+
 
 
