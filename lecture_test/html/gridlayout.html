@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grid Example</title>
+  <style>
+   /* start of Resets  */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42857143; /* 14px * 1.42857143 = 20px */
+
+    }
+   /* end of Resets  */
+   
+  /* Fixed-width container */
+  .container {
+    width: 900px;
+  }
+  .container, .container-fluid{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: whitesmoke;
+  }
+  .row::after{
+  }
+  /*  
+  [class|="col"]{
+    margin:0.5%;
+    padding:0.8%;
+  }*/
+  .row {
+    clear: both;
+    height: 50px;    
+    margin-top: 0.5%;
+  }
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-13, .col-14{
+    min-height: 1px;
+    float: left;
+    border: 1px solid #999;
+    background-color: #444;
+    color:#fff;
+    text-align: center;
+    line-height: 50px;
+  }
+  .col-1 {
+    width: 8.33333333%;
+  }
+  .col-2{
+    width: 16.666667%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33333333%;
+  }
+  .col-5 {
+    width: 41.6666665%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33333333%;
+  }
+  .col-8 {
+    width: 66.666667%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33333333%;
+  }
+  .col-11 {
+    width: 91.666667%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+  section p, article{
+    line-height: 10px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+    </div>
+    <div class="row">
+      <div class="col-3">col-3</div>
+      <div class="col-3">col-3</div>
+      <div class="col-3">col-3</div>
+      <div class="col-3">col-3</div>
+    </div>
+    <div class="row">
+      <div class="col-4">col-4</div>
+      <div class="col-4">col-4</div>
+      <div class="col-4">col-4</div>
+    </div>
+    <div class="row">
+      <div class="col-5">col-5</div>
+      <div class="col-5">col-5</div>
+      <div class="col-2">col-2</div>
+    </div>
+    <div class="row">
+      <div class="col-6">col-6</div>
+      <div class="col-6">col-6</div>
+    </div>
+    <div class="row">
+      <div class="col-7">col-7</div>
+      <div class="col-5">col-5</div>
+    </div>
+    <div class="row">
+      <div class="col-8">col-8</div>
+      <div class="col-4">col-4</div>
+    </div>
+    <div class="row">
+      <div class="col-9">col-9</div>
+      <div class="col-3">col-3</div>
+    </div>
+    <div class="row">
+      <div class="col-10">col-10</div>
+      <div class="col-2">col-2</div>
+    </div>
+    <div class="row">
+      <div class="col-11">col-11</div>
+      <div class="col-1">col-1</div>
+    </div>
+  </div>
+
+    <div class="col-12">
+      <nav class="col-12">
+        navigation
+      </nav>
+      <div class="row">
+        <div class="col-2">
+          html
+        </div>
+        <section class="col-8">
+          <h3 class="col-12">Main Section</h3>
+          <p class="col-12">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</p>
+          <article class="col-4">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+          <article class="col-4">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+          <article class="col-4">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+        </section>
+        <section class="col-2">
+          news
+        </section>
+      </div>
+      <footer class="col-12">
+        footer
+      </footer>
+    </body>
+</html>
