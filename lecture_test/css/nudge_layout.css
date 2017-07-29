@@ -18,22 +18,34 @@ a {
 /* nav */
 header {
   width: 100%;
-  height: 56px;
-  line-height: 100%;
+  height: 67px;
+  line-height: 67px;
   background-color: #999;
 }
 header ul, header ul li {
   display: inline-block;
 }
 h1 {
-  width: 120px;
-  line-height: 100%;
+  width: 110px;
+  line-height: 67px;
+  text-align: center;
   float: left;
-  background-color: green;
+  background-color: green; 
 }
+h1 a img {
+  vertical-align: middle;
+} /* vertical-alignn 은 상속되지 않으므로 img에 가운데 정렬을 적용해야 함.  */
+
+/*
 header ul {
   float: right;
+}*/
+
+
+
+/** contents *
+.bookmark_city{
+  position: fixed;
+  top: 60px;
+  width: 20%;
 }
-
-/** contents **/
-
