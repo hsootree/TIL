@@ -7,17 +7,23 @@
 } 
 div {
   height: 30px;
-  margin-bottom: 1%;
+  margin-bottom: 0.5%;
   text-align: center;
   vertical-align: middle;
   color: #fff;
-  line-height: 100%;
+  line-height: 30px;
   background-color: #666;
   border: 1px solid #444;
 }
 
-.box12, .box6, .box4, .box3, box2 {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11{
   float: left;
+}
+.row {
+  clear: both;
+  height: 30px;
+  background-color: #fff;
+  border: 0;
 }
 /*
 div:not(:nth-of-type(5n-4)) {
@@ -25,39 +31,83 @@ div:not(:nth-of-type(5n-4)) {
 }
 n이 1부터 시작한다고 알았을때 수식이었으나 n이 0부터 시작하므로 수식이 변경됨.
 */
-.box12 {
+/* 1 column */
+.col-1 {
   width: 8.15%;
 }
-.box12:not(:nth-of-type(12n+1)) {
+.col-1:not(:nth-of-type(12n+1)) {
   margin-left: 0.2%;
 }
 
-/* box6  */
-.box6 {
+/* 2 column  */
+.col-2 {
   width: 16.5%;
 }
-.box6:not(:nth-of-type(6n+1)) {
+.col-2:not(:nth-of-type(6n+1)) {
   margin-left: 0.2%;
 }
 
-/* box4 */
-/* 계산은 맞는데 왜 첫번째 마진 값이 적용되는지 모르겠다. 3번째 박스의 왼쪽 마진은 적용되지 않음. 아놔~  */
-.box4 {
+/* 계산은 맞는데 왜 첫번째 마진 값이 적용되는지 모르겠다. 3번째 박스의 왼쪽 마진은 적용되지 않음. 아놔~  
+>> 해결 : 설계한 단위별로 콘텐츠들끼리 부모 선택자를 두어 부모를 컨트롤 즉 클리어를 적용하고 높이값과 줄간격을 px 단위로 한정주면 가운데 정렬도 쉽다.*/
+
+/* 3 column */
+.col-3 {
   width: 24.85%;
 }
-.box4:not(:nth-of-type(4n+1)) {
+.col-3:not(:nth-of-type(4n+1)) {
   margin-left: 0.2%;
 }
-
-/* box3  */
-.box3 {
+/* 4 column  */
+.col-4 {
   width: 33.2%;
 }
-.box3:not(:nth-of-type(3n+1)) {
+.col-4:not(:nth-of-type(3n+1)) {
+  margin-left: 0.2%;
+}
+/* 5 column  */
+.col-5 {
+  width: 41.55%;
+}
+.col-5:not(:nth-of-type(2n+1)),
+.col-6:not(:nth-of-type(2n+1)),
+.col-7:not(:nth-of-type(2n+1)),
+.col-8:not(:nth-of-type(2n+1)), 
+.col-9:not(:nth-of-type(2n+1)),
+.col-10:not(:nth-of-type(2n+1)),
+.col-11:not(:nth-of-type(2n+1)),
+.col-12:not(:nth-of-type(2n+1)){
   margin-left: 0.2%;
 }
 
-/* box2  */
+/* 6 column  */
+.col-6 {
+  width: 49.9%;
+}
+/* 7 column  */
+.col-7 {
+  width: 58.25%;
+}
+/* 8 column  */
+.col-8 {
+  width: 66.6%;
+}
+/* 9 column  */
+.col-9 {
+  width: 74.95%;
+}
+/* 10 column  */
+.col-10 {
+  width: 83.3%;
+}
+/* 11 column  */
+.col-11 {
+  width: 91.65%;
+}
+/* 12 column  */
+.col-12 {
+  width: 100%;
+}
+
 
 
 
