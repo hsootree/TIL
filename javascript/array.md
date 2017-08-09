@@ -166,37 +166,421 @@ arr.push('go'); // [ 'zero', 'one', 'two', 'san', undefined, 'go' ]
 # 5. Array Method
 
 ## 5.1 Array.isArray()
+- static method이다
+- 객체가 배열이면 true, 배열이 아니면 false를 반환한다.
+> 일반 method는 호출시 object명.method명, static은 생성자함수명.method명 을 사용한다.
+static의 생성자함수의 method는 new가 필요없이 GO에 이미 값이 올라가 있다.
+
+```javascript
+// true
+Array.isArray([]);   //true
+Array.isArray([1, 2]); // true
+Array.isArray(new Array()); // true
+
+// false
+Array.isArray();           
+Array.isArray({});
+Array.isArray(null);
+Array.isArray(undefined);
+Array.isArray(1);
+Array.isArray('Array');
+Array.isArray(true);
+Array.isArray(false);
+
+```
 
 ## 5.2 Array.prototype.indexOf()
+- 배열에서 인수로 지정된 요소를 검색하여 인덱스를 반환한다
+- `중복되는 요소가 있는 경우 첫번째 인덱스`만 반환된다. 만일 해당하는 요소가 없는 경우, -1을 반환한다.
+
+```javascript
+var arr = [1, 2, 2, 3];
+arr.indexOf(2); // 1
+arr.indexOf(4); // -1
+```
+- 반환 값이 -1이면 실패했다는 처리를 해줘야한다.
+
 
 ## 5.3 Array.prototype.concat(item…)
+- 인수로 넘어온 값들(배열 또는 값)을 자신의 복사본에 요소로 추가하고 복사본을 반환한다. 이때 `원본 배열은 변경되지 않는다.`
+
+```javascript
+var a = ['a', 'b', 'c'];
+var b = ['x', 'y', 'z'];
+
+var c = a.concat(b);
+console.log(c); // ['a', 'b', 'c', 'x', 'y', 'z']
+
+var d = a.concat('String');
+console.log(d); // ['a', 'b', 'c', 'String']
+
+var e = a.concat(b, true);
+console.log(e); // ['a', 'b', 'c', 'x', 'y', 'z', true]
+
+// 원본 배열은 변하지 않는다.
+console.log(a); // [ 'a', 'b', 'c' ]
+```
 
 ## 5.4 Array.prototype.join()
 
+- 배열 요소 전체를 연결하여 문자열을 만든다. 기본구분자는 ‘,’이다.
+  - option으로 원하는 값을 넣을 수 있다.
+- Array.prototype.join() 메소드는 + 연산자보다 빠르다.
+
+```javascript
+str = arr.join([separator = ','])
+
+var arr = ['a', 'b', 'c', 'd'];
+
+var x = arr.join();
+console.log(x);  // 'a,b,c,d';
+
+var y = arr.join('');  // 다붙인다.
+console.log(y);  // 'abcd'
+
+var z = arr.join(':');
+console.log(z);  // 'a:b:c:d'
+```
+
 ## 5.5 Array.prototype.pop()
+- pop은 push와 함께 배열을 스택(LIFO: Last In First Out)처럼 동작하게 한다.(후입 선출)
+- `pop 메소드는 배열에서 마지막 요소를 제거하고 제거한 요소를 반환한다.`
+- 빈 배열일 경우 undefined를 반환한다.
+
+```javascript
+var a = ['a', 'b', 'c'];
+var c = a.pop();
+
+// 원본 배열이 변경된다.
+console.log(a); // a --> ['a', 'b']
+console.log(c); // c --> 'c'
+
+```
 
 ## 5.6 Array.prototype.push(item…)
 
+- 인수로 넘어온 항목을 배열의 끝에 추가한다. 
+- concat 메소드와 다르게 배열 자체를 변경하여 넘어온 인수 전체를 배열에 추가한다. 
+- 반환값은 배열의 새로운 length 값이다.
+
+```javascript
+var a = ['a', 'b', 'c'];
+var b = ['x', 'y', 'z'];
+
+// push는 원본 배열을 직접 변경하고 변경된 배열의 length를 반환한다.
+var c = a.push(b, true);
+console.log(a); // a --> ['a', 'b', 'c', ['x', 'y', 'z'], true]
+console.log(c); // c --> 5;
+
+// concat은 원본 배열을 직접 변경하지 않고 복사본을 반환한다.
+console.log([1, 2].concat([3, 4])); // [ 1, 2, 3, 4 ]
+```
+- 요소로 배열이 들어올 수 있다.
+- 배열의 마지막에 값을 추가 할 때는 Array.prototype.push(), 선두에 추가 할 때는 Array.prototype.unshift(), 중간에 추가할 때는 Array.prototype.splice() 메소드를 사용한다.
+
+> push, unshift 메소드는 사용하기 간편하나 performance 면에서는 좋은 방법은 아니다.
+
+```javascript
+var arr = [1, 2, 3, 4, 5];
+
+arr.push(6);
+arr[arr.length] = 6; // 43% faster in Chrome 47.0.2526.106 on Mac OS X 10.11.1
+
+arr.unshift(0);
+[0].concat(arr); // 98% faster in Chrome 47.0.2526.106 on Mac OS X 10.11.1
+```
+
 ## 5.7 Array.prototype.reverse()
+- 배열 요소의 순서를 반대로 변경한다. 이때 원본 배열이 변경된다. 반환값은 변경된 배열이다.
+
+```javascript
+var a = ['a', 'b', 'c'];
+var b = a.reverse();
+
+// 원본 배열이 변경된다
+console.log(a); // [ 'c', 'b', 'a' ]
+console.log(b); // [ 'c', 'b', 'a' ]
+```
 
 ## 5.8 Array.prototype.shift()
 
+- shift는 push와 함께 배열을 큐(FIFO: First In First Out)처럼 동작하게 한다. 
+- 배열에서 첫요소를 제거하고 제거한 요소를 반환한다. 만약 빈 배열일 경우 undefined를 반환한다.
+
+```javascript
+var a = ['a', 'b', 'c'];
+var c = a.shift();
+
+// 원본 배열이 변경된다.
+console.log(a); // a --> [ 'b', 'c' ]
+console.log(c); // c --> 'a'
+```
+
 ## 5.9 Array.prototype.slice(start, end)
+- 배열의 특정 부분에 대한 `복사본을 생성한다.`
+  - 원본을 건드리지 않는다.
+- 첫번째 매개변수 start에 해당하는 인덱스를 갖는 요소부터 매개변수 end에 해당하는 인덱스를 가진 `요소 전까지 복사`된다.
+
+```javascript
+var items = ['a', 'b', 'c'];
+
+// items[0]부터 items[1] 이전(items[1] 미포함)까지 반환
+var res1 = items.slice(0, 1);
+console.log(res1);  // [ 'a' ]
+
+// items[1]부터 items[2] 이전(items[2] 미포함)까지 반환
+var res2 = items.slice(1, 2);
+console.log(res2);  // [ 'b' ]
+
+// items[1]부터 이후의 모든 요소 반환
+var res3 = items.slice(1);
+console.log(res3);  // [ 'b', 'c' ]
+
+// 인자가 음수인 경우 배열의 끝에서 2개의 요소를 반환
+var res4 = items.slice(-2);
+console.log(res4);  // [ 'b', 'c' ]
+
+// 모든 요소를 반환
+var res5 = items.slice();
+console.log(res5);  // [ 'a', 'b', 'c' ]
+
+// slice는 복사본을 반환한다. 원본은 변경되지 않는다.
+console.log(items); // [ 'a', 'b', 'c' ]
+```
 
 ## 5.10 Array.prototype.splice(start, deleteCount, item…)
+- 기존의 배열의 요소를 제거하고 그 위치에 새로운 요소를 추가한다. 배열 중간에 새로운 요소를 추가할 때도 사용된다.
+  - start : 배열에서의 시작 위치이다
+  - deleteCount : 시작 위치(start)부터 제거할 요소의 수이다.
+  - item : 삭제한 위치에 추가될 요소들이다. (옵션)
+
+```javascript
+var items = ['one', 'two', 'three', 'four'];
+
+// items[1]부터 2개의 요소를 제거하고 제거된 요소를 배열로 반환
+var res = items.splice(1, 2);
+
+// 원본 배열이 변경된다.
+console.log(items); // [ 'one', 'four' ]
+// 제거한 요소가 배열로 반환된다.
+console.log(res);   // [ 'two', 'three' ]
+
+var items = ['one', 'two', 'three', 'four'];
+
+// items[1]부터 2개의 요소를 제거하고 그자리에 새로운 요소를 추가한다. 제거된 요소가 반환된다.
+var res = items.splice(1, 2, 'x', 'y');
+
+// 원본 배열이 변경된다.
+console.log(items); // [ 'one', 'x', 'y', 'four' ]
+// 제거한 요소가 배열로 반환된다.
+console.log(res);   // [ 'two', 'three' ]
+
+var items = ['one', 'two', 'three', 'four'];
+
+// items[1]부터 0개의 요소를 제거하고 그자리(items[1])에 새로운 요소를 추가한다. 제거된 요소가 반환된다.
+var res = items.splice(1, 0, 'x');
+
+// 원본 배열이 변경된다.
+console.log(items); // [ 'one', 'x', 'two', 'three', 'four' ]
+// 제거한 요소가 배열로 반환된다.
+console.log(res);   // [ ]
+
+var items = ['one', 'four'];
+
+// items[1]부터 0개의 요소를 제거하고 그자리(items[1])에 새로운 배열를 추가한다. 제거된 요소가 반환된다.
+// var res = items.splice(1, 0, ['two', 'three']); // [ 'one', [ 'two', 'three' ], 'four' ]
+var res = Array.prototype.splice.apply(items, [1, 0].concat(['two', 'three']));
+// ES6
+// var res = items.splice(1, 0, ...['two', 'three']);
+
+console.log(items); // [ 'one', 'two', 'three', 'four' ]
+console.log(res);   // [ ]
+
+```
+> ['two','three']가 배열로 되어있어서 apply를 사용하여서 배열을 풀어서 넣는다 ES6에서는 ...을 사용하여서 해결한다.
 
 ## 5.11 Array.prototype.sort(comparefunc)
 
+- 배열의 내용을 적절하게 정렬한다.
+  - 수를 정렬할때 `인자로 callback함수를 주어야한다.`
+
+```javascript
+var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+
+// ascending(오름차순)
+fruits.sort();
+console.log(fruits); // [ 'Apple', 'Banana', 'Mango', 'Orange' ]
+
+// descending(내림차순)
+fruits.reverse();
+console.log(fruits); // [ 'Orange', 'Mango', 'Banana', 'Apple' ]
+
+var points = [40, 100, 1, 5, 25, 10];
+
+points.sort();
+console.log(points); // [ 1, 10, 100, 25, 40, 5 ]
+
+// Syntax : array.sort(compareFunction)
+
+// 숫자 배열 오름차순 정렬
+// compareFunction의 반환값이 0보다 작은 경우, a를 우선한다.
+points.sort(function (a, b) { return a - b; });
+console.log(points); // [ 1, 5, 10, 25, 40, 100 ]
+
+// 숫자 배열에서 최소값 취득
+console.log(points[0]); // 1
+
+// 숫자 배열 내림차순 정렬
+// compareFunction의 반환값이 0보다 큰 경우, b를 우선한다.
+points.sort(function (a, b) { return b - a; });
+console.log(points); // [ 100, 40, 25, 10, 5, 1 ]
+
+// 숫자 배열에서 최대값 취득
+console.log(points[0]); // 100
+```
+
 ## 5.12 Array.prototype.map()
 
+- 배열을 순회하며 각 요소에 대하여 인자로 주어진 `콜백함수를 실행`하고 그 결과가 반영된 새로운 배열을 반환한다. 
+- 1번째 인자로 `콜백함수`의 인자로 `요소값, 요소 인덱스, 순회할 배열`을 전달할 수 있다.
+
+```javascript
+var numbers = [1, 4, 9];
+// 배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백함수를 실행
+var roots = numbers.map(Math.sqrt);
+console.log(roots); // [ 1, 2, 3 ]
+```
+
+- 2번째 인자로 `this를` 전달할 수 있다.
+
+```javascript
+function Prefixer(prefix) {
+  this.prefix = prefix;
+}
+
+Prefixer.prototype.prefixArray = function (arr) {
+  // 콜백함수의 인자로 요소값, 요소 인덱스, 순회할 배열을 전달할 수 있다.
+  return arr.map(function (x) {
+    // x는 요소값이다.
+    return this.prefix + x; // 2번째 인자 this를 전달하지 않으면 this === window
+  }, this);
+};
+
+var pre = new Prefixer('-webkit-');
+var preArr = pre.prefixArray(['linear-gradient', 'border-radius']);
+console.log(preArr);
+// [ '-webkit-linear-gradient', '-webkit-border-radius' ]
+```
+- `x는 map함수가 기본적으로 세팅하는 값은 순서대로 요소값을 나타내며 그 뒤에 값을 더 넣어주는 순서대로, 요소 인덱스, 순회할 배열을 전달할 수 있다.`
+- Es6의 Arrow function를 사용하면 this를 생략하여도 동일한 동작을 한다.
+
+> 순회하는 함수들은 2번째 인자로 this를 넣어줄수 있다 그래서 this가 전역이 되는 것을 막아준다.
+만약 2번째 인자로 사용하지 않는다면 that을 생성하여서 that을 넣어주면 된다.
+
+
 ## 5.13 Array.prototype.forEach()
+- 배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백함수를 실행한다. 
+- 콜백함수의 인자로 요소값, `요소 인덱스, 순회할 배열`을 전달할 수 있다. 일반 for 구문에 비해 성능이 좋지는 않다.
+
+```javascript
+var total = 0;
+
+[1, 3, 5, 7, 9].forEach(function (element, index, array) {
+  console.log('[' + index + '] = ' + element);
+  total += element;
+});
+
+console.log(total);
+```
+
+- 2번째 인자로 this를 전달할 수 있다.
+
+```javascript
+function Counter() {
+  this.sum = 0;
+  this.count = 0;
+}
+Counter.prototype.add = function (array) {
+  // entry는 array의 요소값
+  array.forEach(function (entry) {
+    this.sum += entry; // 2번째 인자 this를 전달하지 않으면 this === window
+    this.count++;
+  }, this);
+};
+
+var obj = new Counter();
+obj.add([2, 5, 9]);
+console.log(obj.count); // 3
+console.log(obj.sum);   // 16
+```
+- Es6의 Arrow function를 사용하면 this를 생략하여도 동일한 동작을 한다.
+
 
 ## 5.14 Array.prototype.filter()
+- 배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백함수의 실행 결과가 true인 요소값만을 모은 새로운 배열을 반환한다.
+- 배열에서 특정 케이스만 필터링 조건으로 추출하여 새로운 배열을 만들고 싶을 때 사용한다.
+- 콜백함수의 인자로 요소값, 요소 인덱스, 순회할 배열을 전달할 수 있다.
+
+```javascript
+var result = [1, 2, 3, 4, 5].filter(function (element, index, array) {
+  console.log('[' + index + '] = ' + element);
+  return element % 2; // 홀수만을 필터링한다 (1은 true로 평가된다)
+});
+
+console.log(result);
+```
 
 ## 5.15 Array.prototype.reduce()
+ 배열을 순회하며 각 요소에 대하여 이전의 콜백함수 실행 반환값을 전달하여 콜백함수를 실행하고 그 결과를 반환한다.
+- `previousValue: 이전 콜백의 반환값, currentValue : 요소값, currentIndex : 인덱스, array : 순회할 배열를 인자로 가진다.`
+
+```javascript
+/*
+previousValue: 이전 콜백의 반환값
+currentValue : 요소값
+currentIndex : 인덱스
+array        : 순회할 배열
+*/
+var result = [1, 2, 3, 4, 5].reduce(function (previousValue, currentValue, currentIndex, array) {
+  console.log(previousValue + '+' + currentValue + '=' + (previousValue + currentValue));
+  return previousValue + currentValue; // 결과는 다음 콜백의 첫번째 인자로 전달된다
+});
+
+console.log(result); // 15: 1~5까지의 합
+/*
+1: 1+2=3
+2: 3+3=6
+3: 6+4=10
+4: 10+5=15
+15
+*/
+```
+- 1번 시작시 (1,2) / 2번 시작시 (1+2,3) / 3번 시작시 (1+2+3,4) / 4번 시작시 (1+2+3+4, 5)
+- Array.prototype.reduce()
+![Array.prototype.reduce()](../images/reduce.png)
 
 ## 5.16 Array.prototype.find()
 
+- ES6에서 새롭게 도입된 메소드로 Internet Explorer에서는 지원하지 않는다.
 
-## 5.4 Array.prototype.join()
+- 배열을 순회하며 각 요소에 대하여 인자로 주어진 콜백함수를 실행하여 `그 결과가 참인 첫번째 요소를 반환한다.` 콜백함수의 인자로 요소값, 요소 인덱스, 순회할 배열을 전달할 수 있다.
+
+```javascript
+var array = [
+  { id: 1, name: 'Lee' },
+  { id: 2, name: 'Kim' },
+  { id: 2, name: 'Choi' },
+  { id: 3, name: 'Park' }
+];
+
+var result = array.find(function (element) {
+  return element.id === 2; // 조건
+});
+
+// ES6
+// const result = array.find(element => element.id === 2;);
+
+console.log(result); // { id: 2, name: 'Kim' }
+```
+
 
