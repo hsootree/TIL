@@ -86,7 +86,7 @@ ex)
 6
 8
 
-while (var l = 0; l < 10; l++){// unexpected token var 잘못된 식이라고 에러 메시지 // 0부터 시작해서 10미만 일때까지 1씩 증가한다.
+while (var l = 0; l < 10; l++){// unexpected token var 잘못된 식이라고 에러 메시지 >> !! for문은 축약이 가능한 문법이나 while문은 축약이 불가능한 문법이어서 에러가 나는 것이다.// 0부터 시작해서 10미만 일때까지 1씩 증가한다.
   if(l % 2 === 0){//2로 나누고 나머지가 0인 짝수라면 
     console.log(l);//출력한다.
   }
@@ -130,9 +130,33 @@ while(m > 0){ // m값이 0보다 클때까지 반복한다.
 ****
 *****
 
-*/
-var star = '*';
-var line = 1;
+
+var star = '*'; // 별로 정의
+var line = 5; // 높이가 5인 즉, 5줄
+for (var o = 0; o < line; o++) { // 0에서 시작해서 4까지 1씩 증가한다.
+  result += star; // 별을 하나씩 더해진 것을 출력한다.
+  star += '/n'; // 개행을 한다.
+}
+
+
+// 3줄짜리 삼각형
+var line = 3;
+// 출력용 변수
+var star = '';
+
+// 삼각형 라인수(line)만큼 루프: i = 0, 1, 2
+for (var i = 0; i < line; i++) {
+  // 라인별 별의 갯수(i + 1)만큼 루프
+  for (var j = 0; j < i + 1; j++) {
+    // 1번째 라인 : i = 0 / j = 0 => *
+    // 2번째 라인 : i = 1 / j = 0, 1 => **
+    // 3번째 라인 : i = 2 / j = 0, 1, 2 => ***
+    star += '*';
+  }
+  // 개행
+  star += '\n';
+}
+
 /*
 트리 출력하기
 
@@ -149,4 +173,60 @@ var line = 1;
 ****
 *****
 
+
+// 나쁜예
+var foo = function () {
+  var a = 3, b = 5;
+  var bar = function () {
+    var b =7, c = 11;
+    a += b+ c;
+
+  };
+  bar();
+};
+
+// 나쁜 예
+function foo() {
+  x = 1;   // Throws a ReferenceError in "use strict" mode
+  var y = 2;
+}
+
+foo();
+
+console.log(x); // 1
+console.log(y);
+
+var Person = function(name) {
+  // 생성자 함수 코드 실행 전 -------- 1
+  this.name = name;  // --------- 2
+  // 생성된 함수 반환 -------------- 3
+}
+
+var me = new Person('Lee');
+console.log(me.name);
 */
+
+
+// Scope-Safe Constructor Pattern
+function A(arg) {
+  // 생성자 함수가 new 연산자와 함께 호출되면 함수의 선두에서 빈객체를 생성하고 this에 바인딩한다.
+
+  /*
+  this가 호출된 함수(arguments.callee, 본 예제의 경우 A)의 인스턴스가 아니면 new 연산자를 사용하지 않은 것이므로 이 경우 new와 함께 생성자 함수를 호출하여 인스턴스를 반환한다.
+  arguments.callee는 호출된 함수의 이름을 나타낸다. 이 예제의 경우 A로 표기하여도 문제없이 동작하지만 특정함수의 이름과 의존성을 없애기 위해서 arguments.callee를 사용하는 것이 좋다.
+  */
+
+
+  if (!(this instanceof arguments.callee)) {
+    return new arguments.callee(arg);
+  }
+
+  this.value = arg ? arg : 0;
+}
+
+var a = new A(100);
+var b = A(10);
+
+console.log(a.value);
+console.log(b.value);
+
