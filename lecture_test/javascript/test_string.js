@@ -54,12 +54,20 @@ console.log(res); // 출력 : HELLO WORLD -done!
 // str.indexOf(searchValue[, fromIndex])
 // searchValue: 검색할 문자 또는 문자열
 // fromIndex : 검색 시작 index (생략할 경우, 0)
-
 var str = 'Hollow World';
-console.log(str.indexOf('l')); // l 문자를 검색 fromindex를 생략했으므로 0부터 시작함. 카운트는 어떻게 하지? 개수를 어떻게 구하지?
-// for문을 사용하여 반복해서 찾고 출력이 되는 값을 더하면 갯수를 구할 수 있을까?
-// 결과 : l 이 총 3개이므로 3 결과값이 출력되면 됨.
+  console.log(str.indexOf('l')); // l 문자를 검색 fromindex를 생략했으므로 0부터 시작함. 카운트는 어떻게 하지? 개수를 어떻게 구하지?
+  // for문을 사용하여 반복해서 찾고 출력이 되는 값을 더하면 갯수를 구할 수 있을까?
+  // 결과 : l 이 총 3개이므로 3 결과값이 출력되면 됨.
   
+// String.prototype.replace()
+// 첫번째 인수로 전달된 문자열 또는 정규표현식을 대상 문자열에서 검색하여 두번째 인수로 전달된문자열로 대체한다. 검색된 문자열이 복수 존재할 경우 첫번째로 검색된 문자열만 대체된다
+// str.replace(pattern, replacement[, flags])
+// pattern: 검색 대상 문자열 또는 정규표현식
+// replacement: 치환 문자열
 
+  var str = 'Hello World'; // Hello World 를 할당한다.
+  var replacedStr = str.replace('Hello', 'soo'); // Hello를 soo로 치환한 변수를 할당한다.
+  console.log(replacedStr); // 치환한 변수를 출력한다.
+  console.log(str); // 치환전의 변수를 출력한다.
 
   
