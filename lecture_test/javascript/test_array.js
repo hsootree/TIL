@@ -113,6 +113,13 @@ Array.isArray('Array'); // false
 Array.isArray(true); // false
 Array.isArray(false); // false
 
+// indexOf()
+var arr = [4, 5, 5, 6]; // 동일한 값의 요소를 중복 제공한 배열을 할당한다.
+arr.indexOf(0); //  0 요소가 없으므로 -1 값을 출력
+arr.indexOf(4); // 4 요소가 0인덱스에 있으므로 0 값을 출력
+arr.indexOf(5); // 5 요소가 1, 2 인덱스에 있으므로 첫번째 인덱스 값인 1을 출력
+arr.indexOf(6); // 6 요소가 3 인덱스에 있으므로 인덱스 값인 3을 출력
+arr.indexOf(7); // 7 요소가 없으므로 -1 값을 출력
 
 // Array.prototype.concat(item...)
 // 인수로 넘어온 값들(배열 또는 값)을 자신의 복사본에 요소로 추가하고 복사본을 반환한다. 이때 원본 배열은 변경되지 않는다.
@@ -133,10 +140,61 @@ var arr = ['a', 'b', 'c', 'd']; // 배열을 할당한다.
 var x = arr.join(); // join메소드는 + 연산자보다 빠르다.
 console.log(x); // 'a,b,c,d' 
 var y = arr.join('');
-console.log(y);  // 'abcd'
+console.log(y); // 'abcd'
 var z = arr.join(':');
-console.log(z);  // 'a:b:c:d'
+console.log(z); // 'a:b:c:d'
 
 // Array.prototype.pop()
+// 배열에서 마지막 요소 제거
+var a = ['a', 'b', 'c'];
+var c = a.pop(); // a 배열의 마지막 요소인 c를 제거한다.
+console.log(a); // ['a', 'b'] 를 출력한다.
+console.log(c); // 마지막 요소인 c를 출력한다.
+
+// Array.prototype.push(item…)
+// 인수로 넘어온 항목을 배열의 끝에 추가한다. 
+var a = ['a', 'b', 'c'];
+var b = ['x', 'y', 'z'];
+var c = a.push(b); // a배열에 b배열을  추가하는데 요소만 추가하는 것이 아니라 배열 함수 자체를 추가하므로 프로퍼티에 배열 b 자체가 생성된다.
+var c = a.push(b, true); // b배열을 추가하고 true요소를 추가한다.
+console.log(a); // ['a', 'b', 'c', ['x', 'y', 'z'], true] 를 출력한다.
+/*
+(4) ["a", "b", "c", Array(3)]
+  0: "a"
+  1: "b"
+  2: "c"
+  3: Array(3)
+    0: "x"
+    1: "y"
+    2: "z"
+    length: 3
+    __proto__: Array(0)
+    length: 4
+    __proto__: Array(0)
+*/
+
+console.log(c); // 6을 출력
+console.log([1, 2].concat(3, 4])); //concat은 원본 배열을 직접 변경하지 않고 복사본을 반환한다.
+
+// 마지막 값 추가 push
+// 선두에 값 추가 unshift
+// 중간에 값 추가 splice
+
+var arr = [1, 2, 3, 4, 5]; // 배열을 할당한다.
+arr.push(6); // 마지막에 6을 추가한다. [1, 2, 3, 4, 5, 6]
+arr[arr.length] = 6; // ???? 무엇을 핵실래 출력 값이 6이 나오지???
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
