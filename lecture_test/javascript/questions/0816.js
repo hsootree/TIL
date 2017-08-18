@@ -20,35 +20,35 @@ str[0]; // "8"
 
 // 풀이 1안
 // 숫자를 1 ~ 10000 을 증가하는 숫자 변수 'i'를 이용하여 할당한다.
-function checkoct(a, b, c){
-var count = 0; // j의 변수를 0으로 초기화한다.
-for (var i = a; i <= b; i++) {
-// 만약에 i 숫자의 각 인덱스(n) 의 값이 8인지를 비교하여 일치하면 j에 일치하는 수만큼 할당한다.
-  console.log(i); // i 숫자가 범위안에서 증가하는지 확인한다.
-  var str = i.toString(); // 숫자를 문자열로 바꾼다.
-  var cstring = c.toString();
+function checkoct(a, b, c){ // 3개의 변수를 이용한 함수 생성
+var count = 0; // count의 변수를 0으로 초기화한다.
+for (var i = a; i <= b; i++) { // 시작 숫자를 a로 대입하여 할당, 검사 범위의 숫자를 b로 대입하여 할당, i를 1씩 증가한다.
+  // console.log(i); // i 숫자가 범위안에서 증가하는지 확인한다.
+  var str = i.toString(); // 숫자를 문자열로 바꾼 str을 할당한다.
+  var cstring = c.toString(); // c문자열로 바꾼 cstring를 할당한다.
   // 인덱스의 숫자 값을 확인한다.
-  console.log(typeof str); // str의 타입을 확인해본다.
+  // console.log(typeof str); // str의 타입을 확인해본다.
+  // console.log(typeof cstring); // cstring 타입을 확인해본다.
   // ??? var numb = // numb를 0이상 4미만으로 한정할때 무엇을 작성해야 하지?? 아래 for문으로 해결!
   //
-  for (var numb = 0; numb < str.length; numb++){ // numb를 0부터 4미만까지 반복한다.
-    console.log(numb); // numb 숫자가 범위안에서 증가하는지 확인한다.
-    console.log(str[numb]); // 
+  for (var numb = 0; numb < str.length; numb++){ // numb를 0부터 str문자열의 갯수 미만까지 반복한다.
+    // console.log(numb); // numb 숫자가 범위안에서 증가하는지 확인한다.
+    // console.log(str[numb]); // 
 
     // 확인한 숫자를 8과 비교한다.
     if (str[numb] === cstring) {
-      count++; // j를 선언해야 하는데... 흠... 에러나는 곳!!!!!!
+      count++; // j를 선언해야 하는데... 흠... 에러나는 곳!!!!!! count 선언한 변수에 증가.
     // 일치하면 +1을 하고 
     } 
   }
-  //j; // 8과 일치하지 않으면 이전의 j 값을 반환한다.
+  //j; // 8과 일치하지 않으면 이전의 j 값을 반환한다. count를 반환하는 것으로 대체
   // 일치하지 않으면 다음으로 넘어가고
 // 모든 인덱스 수를 확인했으면 i를 증가한 수를 위의 방법으로 반복한다. 언제까지? 10000이 될때까지.
 
 }
 return count;
 }
-console.log(checkoct(1,10000,8));
+console.log(checkoct(1,10000,8)); // 변수를 적용할 수 있도록 3개의 변수를 적용한 함수를 이용.
 
 
 /*
