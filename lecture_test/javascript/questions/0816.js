@@ -20,12 +20,12 @@ str[0]; // "8"
 
 // 풀이 1안
 // 숫자를 1 ~ 10000 을 증가하는 숫자 변수 'i'를 이용하여 할당한다.
-function checkoct(a, b, c){ // 3개의 변수를 이용한 함수 생성
+function checkoct(minNum, maxNum, findNum){ // 3개의 변수를 이용한 함수 생성 minNum=범위의 최소숫자, maxNum=범위의 최대숫자, findNum=찾을 숫자
 var count = 0; // count의 변수를 0으로 초기화한다.
-for (var i = a; i <= b; i++) { // 시작 숫자를 a로 대입하여 할당, 검사 범위의 숫자를 b로 대입하여 할당, i를 1씩 증가한다.
+for (var i = minNum; i <= maxNum; i++) { // 시작 숫자를 a로 대입하여 할당, 검사 범위의 숫자를 b로 대입하여 할당, i를 1씩 증가한다.
   // console.log(i); // i 숫자가 범위안에서 증가하는지 확인한다.
   var str = i.toString(); // 숫자를 문자열로 바꾼 str을 할당한다.
-  var cstring = c.toString(); // c문자열로 바꾼 cstring를 할당한다.
+  var fstring = findNum.toString(); // c문자열로 바꾼 cstring를 할당한다.
   // 인덱스의 숫자 값을 확인한다.
   // console.log(typeof str); // str의 타입을 확인해본다.
   // console.log(typeof cstring); // cstring 타입을 확인해본다.
@@ -36,7 +36,7 @@ for (var i = a; i <= b; i++) { // 시작 숫자를 a로 대입하여 할당, 검
     // console.log(str[numb]); // 
 
     // 확인한 숫자를 8과 비교한다.
-    if (str[numb] === cstring) {
+    if (str[numb] === fstring) {
       count++; // j를 선언해야 하는데... 흠... 에러나는 곳!!!!!! count 선언한 변수에 증가.
     // 일치하면 +1을 하고 
     } 
