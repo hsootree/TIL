@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>약관 동의 - 돔 스크립트 제어 연습</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div id="wrapper">
+    <h1>약관동의</h1>
+    <section id="checkform">
+      <h2>checkede </h2>
+      <form id ="checkoption">
+        <h3>Checked된 chedckbox의 수를 alert으로 표시하는 버튼과 모든 체크박스를 on/off로 토글하는 버튼</h3>
+        <p>
+          <label for="option1">option1</label>
+          <input type="checkbox" name="" id="option1">
+        </p>
+        <p>
+          <label for="option2_1">option2</label>
+          <input type="checkbox" name="" id="option2_1">
+        </p>
+        <p>
+          <label for="option3_1">option3</label>
+          <input type="checkbox" name="" id="option3_1">
+        </p>
+        <p>
+          <input type="readonly" name="" id="checkednum" title="체크된 옵션 수">
+          <input type="button" value="checked-off" name="" id="checkedToggle">
+        </p>
+      </form>
+      <form>
+        <h2>약관 동의가 체크되지 않았을 때, alert으로 약관 동의를 요구 </h2>
+        <article class="terms">
+          <h3>약관동의</h3>
+          <p class="serviceterms">요소의 텍스트는 텍스트 노드에 저장되어 있다. 텍스트 노드에 접근하려면 아래와 같은 수순이 필요하다. 해당 텍스트 노드의 부모 노드를 선택한다. 텍스트 노드는 요소 노드의 자식이다. firstChild 프로퍼티를 사용하여 텍스트 노드를 탐색한다. 텍스트 노드의 유일한 프로퍼티(nodeValue)를 이용하여 텍스트를 취득한다. nodeValue를 이용하여 텍스트를 수정한다.</p>
+          <label for="">약관 동의</label><input type="checkbox" name="" id=""> 
+        </article>
+        <article class="terms">
+          <h3>약관동의</h3>
+          <p class="serviceterms">className - class 어트리뷰트의 값을 취득 또는 변경한다. className 프로퍼티에 값을 할당하는 경우, class 어트리뷰트가 존재하지 않으면 class 어트리뷰트를 생성하고 지정된 값을 설정한다. class 어트리뷰트의 값이 여러개일 경우, 공백으로 구분된 문자열이 반환되므로 String 메소드 split(' ')를 사용하여 배열로 변경하여 사용한다. 모든 브라우저에서 동작한다.</p>
+          <label for="">약관 동의</label><input type="checkbox" name="" id="">
+        </article>
+        <h2>최종확인</h2>
+        <input type="submit" value="모두동의">
+        <input type="submit" value="확인">
+      </form>
+    </section>      
+  </div>
+  <script src="checked.js"></script>
+  
+</body>
+</html>
