@@ -1,0 +1,52 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book List</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Book List</h1>
+      <table id="bookList">
+        <thead>
+          <tr>
+            <th id="checkbox"><input type="checkbox" id="toggleCheck"></th>
+            <th class="numb">#</th>
+            <th class="title">Title</th>
+            <th class="author">Author</th>
+            <th class="price">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="checkbox"><input type="checkbox" id="toggleCheck"></td>
+            <th class="numb"></th>
+            <td class="title"></td>
+            <td class="author"></td>
+            <td class="price"></td>
+          </tr>
+        <tbody>
+      </table>
+      <form>
+        <fieldset id="btnGroup">
+            <input type="button" id="btnDel" name="" value="Delete Book">
+            <input type="button" id="btnAdd" name="" value="Add Book">
+            <input type="button" id="btnCancel" name="" value="Cancel">
+        </fieldset>
+        <fieldset id="inputText">
+          <ul id="inputList">
+            <li><input type="text" id="inputTitle" name="" value="" placeholder="* Title"></li>
+            <li><input type="text" id="inputAuthor" name="" value="" placeholder="Author"></li>
+            <li><input type="text" id="inputPrice" name="" value="" placeholder="price"></li>
+          </ul>
+        </fieldset>
+
+
+      </form>
+    
+    </div>
+  </body>
+  </html>
