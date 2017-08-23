@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+* {
+  margin:0;
+  padding:0;
+}
+#wrapper {
+  max-width: 1200px;
+  margin : 0.2% auto;
+}
+table, tr {
+  width:100%;
+}
+table, th, td {
+  border-collapse: collapse; 
+  border : 1px solid #424242;
+  text-align: center;
+}
+
+/* button */
+#btnDel, #btnAdd, #btnCancel{
+  padding:1%;
+  color:#fff;
+  border :1px solid #999;
+}
+#btnDel {
+  background-color: #BF360C;
+}
+#btnAdd {
+  background-color: #1A237E;
+}
+#btnCancel {
+  background-color: #33691E;
+}
+
+
+/* 텍스트 입력 */
+
