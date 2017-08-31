@@ -20,7 +20,7 @@ str[0]; // "8"
 
 // 풀이 1안
 // 숫자를 1 ~ 10000 을 증가하는 숫자 변수 'i'를 이용하여 할당한다.
-function checkoct(minNum, maxNum, findNum){ // 3개의 변수를 이용한 함수 생성 minNum=범위의 최소숫자, maxNum=범위의 최대숫자, findNum=찾을 숫자
+function checkoct(minNum, maxNum, findNum){ // 3개의 매개변수(parameter,인자)를 이용한 함수 생성, minNum=범위의 최소숫자, maxNum=범위의 최대숫자, findNum=찾을 숫자
 var count = 0; // count의 변수를 0으로 초기화한다.
 for (var i = minNum; i <= maxNum; i++) { // 시작 숫자를 a로 대입하여 할당, 검사 범위의 숫자를 b로 대입하여 할당, i를 1씩 증가한다.
   // console.log(i); // i 숫자가 범위안에서 증가하는지 확인한다.
@@ -92,8 +92,9 @@ function alphaString46 (s) {
   if ( 4 < s.length  && s.length < 6) {
     return (typeof s) = number;
   }
-  else {
+  else {localStorage
     return false;
   }
 }
-console.log(1123);
+console.log(alpahString46(a234));
+console.log(alpahString46(1234));

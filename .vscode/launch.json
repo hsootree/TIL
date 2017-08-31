@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceRoot}"
+    },
+    {
+      "name": "Launch index.html (disable sourcemaps)",
+      "type": "chrome",
+      "request": "launch",
+      "sourceMaps": false,
+      "file": "${workspaceRoot}/lecture_test/javascript/index.html"
+    },
+    {
+     "name": "Launch Program", 
+     "type": "node",
+     "request": "launch",
+     "program": "${file}"
+    }
+  ]
+}

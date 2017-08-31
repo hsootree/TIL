@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/index.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      
+      <!-- 프로필 목록과 각각의 프로필의 링크가 표시되도록 코드를 채워주세요 -->
+      <% data.forEach(profile => { %>
+      <p>
+        <a href="/profile/<%= profile.slug %>"><%= profile.name %></a>
+      </p>
+      <img src="<%= profile.avatar %>" />
+      <p>
+        <%= profile.description %>
+      </p>
+      <% }) %>
+    </div>
+  </body>
+</html>

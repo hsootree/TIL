@@ -369,6 +369,56 @@ Promise.all([userPromise, reposPromise, issues]) => {
   }) // catch 가 빠졌지만 에러처리도 간편해짐.
 ```
 
+### Async/Await
+새로운 자바스크립트에 도입된 문법 - 실무에서는 널리 도입되지 않음.
+있는지 정도만 알고 가고 다음시간 부터는 promise 로 코딩함.
+
+```
+const tenSec = require('./tenSec')
+
+async function resolveAfterTenSec() {
+  await tenSec() //  에러가 나면 이 안에 에러 처리를 하면 됨.
+  return 1
+}
+
+resolveAfterTenSec().then(value => {
+  console.log(value)
+})
+```
+ - c# 에서 처음 만들어짐. 
+ - ES2017에서 도입되어, 비동기식 코드를 동기식 코드처럼 쓸 수 있는 문법 제공
+ - Chrome 55, Node.js 8.0.0 부터 사용가능
+ - `async function` 안에서 반환된 값은 최종적으로 Promise 객체로 변환되어 반환된다.
+ - async function 안에서 쓸 수 있는 await 키워드는 현재 함수를 중단시키고 Promise 객체가 충족될 때까지 `기다리지만, 스레드를 - block 하지 않는다.`
+ - 에러 처리는 동기식 코드처럼 try, catch 블록을  통해서 한다.
+ 
+### readFile - async/await
+
+```
+// readfileAsync.js
+const {promisify} = require('util') // Node.js 8.0.0부터 추가됨
+const fs = require('fs')
+const readFile = promisify(fs.readFile) // 프라미스파이를 반환
+
+async function readFileAsync() {
+  try { // 에러처리
+    const data = await readFile('./calc.js', 'utf8')
+    console.log(data)
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+readFileAsync()
+```
+# HTML5 api
+
+페이지가 새로고침 주소표시줄에 주소또한 새로 굄이 됨.
+
+> 자바스크립트를 사용하여 
+페이지를 새로고침하지 않고 페이지를 불러옴.
+history api
+
 
 
 

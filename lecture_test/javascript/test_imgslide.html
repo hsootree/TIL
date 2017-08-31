@@ -47,13 +47,13 @@
      // const img2 = document.getElementById('img-2');
      // const img3 = document.getElementById('img-3');
 
-/*
+    /*
       const imgElemArr = [img1, img2, img3];
 
       const srcImg1 = img1.getAttriute('src');
       const srcImg2 = img2.getAttriute('src');
       const srcImg3 = img3.getAttriute('src');
-*/
+    */
       
       const imgElemArr = [
         document.getElementById('img-1'),
@@ -61,10 +61,10 @@
         document.getElementById('img-3')
       ]      
 
-     // const imgSrcArr = [srcImg1, srcImg2, srcImg3];
+    // const imgSrcArr = [srcImg1, srcImg2, srcImg3];
 
       var imgSrcArr = imgElemArr.map(el => el.getAttribute('src'));
-/*
+    /*
       document.getElementById('btn').addEventListener('click', () => {
         imgSrcArr.push(imgSrcArr.shift());
 

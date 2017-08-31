@@ -1,0 +1,8 @@
+$width: 100px;
+
+#foo {
+  width: $width + 10em; // NG: 100px + 10em
+}
+#bar {
+  width: $width +20px;
+}

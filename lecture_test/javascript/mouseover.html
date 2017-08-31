@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mouseover/mouseout js test</title>
+  <style>
+  div {
+    width: 100px;
+    height: 100px;
+    background-color:yellow; 
+  }
+  </style>
+</head>
+<body>
+  <div id="test">
+    
+  </div>
+</body>
+
+<script>
+  var test = document.getElementById("test"); // testdp 요소의 아이디 testF를 를 할당한다.
+  test.addEventListener("mouseover", function(event) { // 마우스 오버할때 해당박스에 이벤트 함수를 적용한다.
+    event.div.style.backgroundColor = "green"; // 이벤트 스타일 칼라를 녹색으로 바꾼다.
+  });
+</script>
+
+</html>

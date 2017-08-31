@@ -1,5 +1,5 @@
 
-/* 번복문의 응용 */
+/* 반복문의 응용 */
 
 for (var i = 0; i < 10; i++) {
   console.log('test ' + (i + 1) + ' change number');

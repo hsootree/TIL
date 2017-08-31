@@ -11,8 +11,8 @@ function 이름 (매개변수) {실행코드}의 형태를 가진다.
 */
 
 function numbering() {
-  i = 0;
-  while(i < 10) {
+  var i = 0;
+  while (i < 10) {
     console.log(i);
     i += 1;
   }

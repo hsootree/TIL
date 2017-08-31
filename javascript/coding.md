@@ -145,4 +145,112 @@ code runner 부가 기능이 설치 되어 있다면
 ## 4.3. 변수 (Variable)
 programming language에서 변수는 값(value)을 저장(할당), 참조하기 위해 사용된다. 한번 쓰고 버리는 값이 아닌 유지할 필요가 있는 값의 경우, 변수를 사용
 
+선언, 초기화
+리터러리
+정수 리터러리
+데이터 타입 =  자료형 (7가지가 있음)
+
+객체 - Object
+
+문자열 값은 따옴표 안에~ 잘~ 넣어주세요.
+
+```
+// literal : Number
+10.50
+1001
+
+// literal : String
+'Hello'
+"World"
+
+// literal : Object
+{ name: 'Lee', gender: 'male' }
+
+// literal : Array
+[ 'Black', 'Gray', 'White' ];
+대괄호 안에 배열
+```
+
+논리 연산자
+참고 사이트
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/%EB%85%BC%EB%A6%AC_%EC%97%B0%EC%82%B0%EC%9E%90(Logical_Operators) 
+
+perator	Usage	Description
+Logical AND (&&)	expr1 && expr2	expr1을 false로 변환할 수 있는 경우 expr1을 반환하고, 그렇지 않으면 expr2를 반환합니다.
+따라서 부울 값과 함께 사용할 경우, expr1과 expr2가 모두 true인 경우 true를 반환하고 그렇지 않으면 false를 반환합니다.
+
+Logical OR (||)	expr1 || expr2	
+expr1을 true로 변환할 수 있으면 expr1을 반환하고, 그렇지 않으면 expr2를 반환합니다.
+따라서 부울 값과 함께 사용할 경우, expr1, expr2 둘 중 하나가 true인 경우 true를 반환합니다.
+
+Logical NOT (!)	!expr	단일 피연산자가 true로 변환될 수 있는 경우 false를 반환합니다. 그렇지 않으면 true를 반환합니다.
+
+
+키워드 = 명령어
+
+  var (variable) 
+
+주석 // 한줄
+/* */ 여러줄
+
+4번 가장 중요 6번, for문 많은 연습이 필요
+
+7 오브젝트 상당히 중요함.
+9 펑션 굉장히 중요함.
+그 뒷 파트는 중급자
+scope, this 꼭 알고 넘어가야 함
+13 자바스크립트 내부를 이해해야 함.
+15 객체 지향 ~ 분량이 어마어마함. 반드시 이해하고 가야 함.
+
+자바스크립트에서 기본적으로 제공하는 함수들을 소개하는것. (23 배열- 활용도 높으므로 잘 써야 함.)
+
+24~ 이후로는 중요하며 잘 해야 함. 28은 내용이 없어 수업하지 않음.
+24 DOM - 컨트롤 하는 방법
+
+25 자바스크립트의 한계
+
+
+# 4. Data type & Variable
+데이터의 성질 
+
+var x = 'test'
+숫자를 표현 할 수 있는 한계가 있어 숫자인 경우 내부적으로 어느 사이즈를 미리 잡아 놓고 숫자를 
+
+point 
+힙이라는 영역 - 무슨 말이지????
+
+저장해야 할 메모리 사이즈가 달라지므로 자바스크립트는 7개로 구분을 해놨어.
+
+typeof 연산자를 사용하여 자료형을 반혼하여 준다.
+재할당이 가능함. 문자 > 숫자
+
+
+Boolean
+null, undefined, 숫자 0은 false
+
+null
+대소문자를 구분하므로 항상 소문자로 써야 함.
+
+
+언제????
+타입오프로 하지 않고
+삼항 === 으로 체크함
+
+자바스크립트에서  ==, === 구분
+
+undefined 자바스크립트 엔진은 선언은 되었지만 할당된 적이 없는 변수에 접근하거나 존재하지 않는 객체 프로퍼티에 접근할 경우 반환된다.
+
+----------
+과제 : 정리, css 제출 반응형(슬랙으로 개인 메시지로 전송)
+
+예습 6번까지
+
+
+
+
+
+
+
+
+
 

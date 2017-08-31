@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Respond Grid layout test</title>
+  <link rel="stylesheet" type="text/css" href="경로 추가">
+  <style>
+   /* start of Resets  */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.42857143; /* 14px * 1.42857143 = 20px */
+
+    }
+   /* end of Resets  */
+   
+  /* Fixed-width container */
+  .container {
+    width: 900px;
+  }
+  .container, .container-fluid{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: whitesmoke;
+  }
+  .row::after{
+  }
+  /*  
+  [class|="col"]{
+    margin:0.5%;
+    padding:0.8%;
+  }*/
+  .row {
+    clear: both;
+    height: 30px;    
+    margin-top: 0.5%;
+  }
+  section p, article{
+    height:100%;
+  }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+      <div class="col-1">col-1</div>
+    </div>
+    <div class="row">
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+      <div class="col-2">col-2</div>
+    </div>
+    <div class="row">
+      <div class="col-3">col-3</div>
+      <div class="col-3">col-3</div>
+      <div class="col-3">col-3</div>
+      <div class="col-3">col-3</div>
+    </div>
+    <div class="row">
+      <div class="col-4">col-4</div>
+      <div class="col-4">col-4</div>
+      <div class="col-4">col-4</div>
+    </div>
+    <div class="row">
+      <div class="col-5">col-5</div>
+      <div class="col-5">col-5</div>
+      <div class="col-2">col-2</div>
+    </div>
+    <div class="row">
+      <div class="col-6">col-6</div>
+      <div class="col-6">col-6</div>
+    </div>
+    <div class="row">
+      <div class="col-7">col-7</div>
+      <div class="col-5">col-5</div>
+    </div>
+    <div class="row">
+      <div class="col-8">col-8</div>
+      <div class="col-4">col-4</div>
+    </div>
+    <div class="row">
+      <div class="col-9">col-9</div>
+      <div class="col-3">col-3</div>
+    </div>
+    <div class="row">
+      <div class="col-10">col-10</div>
+      <div class="col-2">col-2</div>
+    </div>
+    <div class="row">
+      <div class="col-11">col-11</div>
+      <div class="col-1">col-1</div>
+    </div>
+  </div>
+
+    <div class="col-12">
+      <nav class="col-12">
+        navigation
+      </nav>
+      <div class="row">
+        <div class="col-2">
+          <p>html</p>
+          <p>css</p>
+        </div>
+        <section class="col-8">
+          <h3 class="col-12">Main Section</h3>
+          <p class="col-12">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</p>
+          <article class="col-4">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+          <article class="col-4">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+          <article class="col-4">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+          <article class="col-6">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+          <article class="col-6">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+          <article class="col-4">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+          <article class="col-8">London, also referred to as Greater London, is one of 9 regions of England and the top-level subdivision covering most of the city's metropolis. The small ancient City of London at its core once comprised the whole settlement, but as its urban area grew, the Corporation of London resisted attempts to amalgamate the city with its suburbs, causing "London" to be defined in a number ways for different purposes.</article>
+        </section>
+        <section class="col-2">
+          <p>comment</p>
+          <p>news</p>
+        </section>
+      </div>
+      <footer class="col-12">
+        footer
+      </footer>
+    </body>
+</html>

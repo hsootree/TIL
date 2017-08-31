@@ -128,6 +128,8 @@ var a = ['a', 'b', 'c'];
 var b = ['x', 'y', 'z'];
 var c = a.concat(b); //a배열과 b배열을 추가하여 새로운 c배열을 생성하여 할당
 console.log(c); // ["a", "b", "c", "x", "y", "z"]
+var dd = b.concat(['ab', 'bc']); // 
+console.log(dd); // ["x", "y", "z", "ab", "bc"]
 
 var d = a.concat('String'); // a배열에 'String'을 추가
 console.log(d); // ["a", "b", "c", "String"]
@@ -143,6 +145,10 @@ var y = arr.join('');
 console.log(y); // 'abcd'
 var z = arr.join(':');
 console.log(z); // 'a:b:c:d'
+arr.join(['x', 'y']); // ["ax,ybx,ycx,yd"]
+
+
+
 
 // Array.prototype.pop()
 // 배열에서 마지막 요소 제거

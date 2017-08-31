@@ -1,12 +1,11 @@
 # Fastcampus 
-## Web Programming & Frontend Dev SCHOOL
 ### REST API, Socket(TCP, websocket)
 
 ---
 <!--
 page_number: true
 $size: A4
-footer : fastcampus 웹 프로그래밍 & 프론트엔드 개발 스쿨, Wooyoung Choi, 2017
+footer : 2017.08.18. 
 -->
 ## API
 

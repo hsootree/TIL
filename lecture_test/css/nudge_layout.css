@@ -11,7 +11,7 @@ a {
 }
 /* center */
 #wrapper {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -30,16 +30,21 @@ h1 {
   line-height: 67px;
   text-align: center;
   float: left;
+  margin: 0 1%;
   background-color: green; 
 }
 h1 a img {
   vertical-align: middle;
-} /* vertical-alignn 은 상속되지 않으므로 img에 가운데 정렬을 적용해야 함.  */
+} /* vertical-align 은 상속되지 않으므로 img에 가운데 정렬을 적용해야 함. 
+text-align은 상속됨. 
+https://github.com/hsootree/TIL/blob/master/css/cascading.md */
+#contents {
+  clear: left;
+}
 
-/*
 header ul {
   float: right;
-}*/
+}
 
 
 

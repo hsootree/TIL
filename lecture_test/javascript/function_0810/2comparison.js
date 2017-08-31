@@ -48,7 +48,7 @@ console.log(bigger(3, 9)); // 숫자를 입력하여 결과값을 확인한다.
 
 // bigger(3, 8); // 숫자를 입력하여 결과값을 확인한다.
 
-
+// 3번째 안
 // Math.max() Math 객체를 이용
 
 console.log(Math.max(5, 9)); // 빌트인 함수 이용. 완료.

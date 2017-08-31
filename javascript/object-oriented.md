@@ -144,11 +144,43 @@ console.log(me);  // Person { name: 'Lee' }
 console.log(you); // Person { name: 'Kim' }
 console.log(him); // Person { name: 'choi' }
 ```
+![](../images/prototype_chain_me.png)  
 
-# 5.1. 의사 클래스 패턴 상속 (Pseudo-classical inheritance)
+---
+
+# 5. 상속 (Inheritance)
+Java같은 클래스 기반 언어에서 상속(또는 확장)은 코드 재사용의 관점에서 매우 유용하다. 새롭게 정의할 클래스가 기존에 있는 클래스와 매우 유사하다면, 상속을 통해 다른 점만 구현하면 된다. `코드 재사용`은 개발 비용을 현저히 줄일 수 있는 잠재력이 있기 때문에 매우 중요하다.
+
+클래스 기반 언어에서 객체는 클래스의 인스턴스이며 클래스는 다른 클래스로 상속될 수 있다. 자바스크립트는 기본적으로 프로토타입을 통해 상속을 구현한다. 이것은 프로토타입을 통해 객체가 다른 객체로 직접 상속된다는 의미이다. 이러한 점이 자바스크립트의 약점으로 여겨지기도 하지만 프로토타입 상속 모델은 사실 클래스 기반보다 강력한 방법이다.
+
+## 5.1. 의사 클래스 패턴 상속 (Pseudo-classical inheritance)
 
 ```javascript
- // ②
+ // 부모 생성자 함수
+var Parent = (function () {
+  // Constructor
+  function Parent(name) {
+    this.name = name;
+  }
+
+  // method
+  Parent.prototype.sayHi = function () {
+    console.log('Hi! ' + this.name);
+  };
+
+  // return constructor
+  return Parent;
+}());
+
+// 자식 생성자 함수
+var Child = (function () {
+  // Constructor
+  function Child(name) {
+    this.name = name;
+  }
+
+  // 자식 생성자 함수의 프로토타입 객체를 부모 생성자 함수의 인스턴스로 교체.
+  Child.prototype = new Parent(); // ②
 
   // 메소드 오버라이드
   Child.prototype.sayHi = function () {
@@ -175,6 +207,7 @@ child.sayBye(); // 안녕히가세요! child
 console.log(child instanceof Parent); // true
 console.log(child instanceof Child);  // true
 ```
+![](../images/pseudo-classical-inheritance.png)
 
 # 5.2. 프로토타입 패턴 상속 (Prototypal inheritance)
  Object.create 함수는 표준에 비교적 늦게 추가되어 IE9 이상에서 정상적으로 동작한다. 따라서 크로스 브라우징에 주의하여야 한다.
