@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div>
+      <% if (user) { %>
+        현재 로그인한 사용자의 이름은 <%= user.name %> 입니다.
+      <% } else { %>
+        현재 로그인한 사용자가 없습니다. 
+      <% } %>
+    </div>
+    <% if (user) { %>
+      <form action="/logout" method="post">
+        <button type="submit">
+          로그아웃
+        </button>
+      </form>
+    <% } else { %>
+      <form action="/login" method="post">
+        <label>
+          사용자 이름
+          <input required type="text" name="username" />
+        </label>
+        <label>
+          비밀번호
+          <input required type="password" name="password" />        
+        </label>
+        <button type="submit">
+          로그인
+        </button>
+      </form>
+    <% } %>
+  </body>
+</html>
