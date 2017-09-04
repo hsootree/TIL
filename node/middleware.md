@@ -729,7 +729,8 @@ app.listen(3000, function() {
 session.sig
 sig 서명을 통한 보안.
 
-
+hash 함수 
+md5-hash-online.waraxe.us 
 
 
 
