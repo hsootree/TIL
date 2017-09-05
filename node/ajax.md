@@ -19,14 +19,6 @@
 ## Ajax Library Comparison
 ![](../images/ANJ9h3o.png)
 
-## Axios
-- Promise based HTTP client
-- 브라우저와 Node.js에서 모두 사용 가능
-- XMLHttpRequest, fetch에 비해 사용하기 편하고 기능이 더 많음
-ref: [내가 fetch API를 쓰지 못했던 이유](https://medium.com/little-big-programming/%EB%82%B4%EA%B0%80-fetch-api%EB%A5%BC-%EC%93%B0%EC%A7%80-%EB%AA%BB%ED%96%88%EB%8D%98-%EC%9D%B4%EC%9C%A0-3c23f0ec6b82)
-취소가 안되는 단점이 있다.
-
-
 
 
 
