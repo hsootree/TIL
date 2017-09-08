@@ -16,8 +16,7 @@ footer : fastcampus 웹 프로그래밍 & 프론트엔드 개발 스쿨, Wooyoun
 - Linked List
 - Tree
 
----
-## Linked List
+---## Linked List
 
 ---
 ## Linked List
@@ -192,7 +191,7 @@ this.insert = function(position, element){
 ## Linked List - insert
 ```javascript
 ...
-        if (position === 0) {
+        if (position === 0) { //현재값을 node의 next값을 넣음.
             node.next = current;
             head = node;
         } else {
@@ -229,7 +228,7 @@ this.insert = function(position, element){
 ```javascript
 this.indexOf = function(element){
     var current = head,
-        index = -1;
+        index = 1; // -1 을 1 값으로 변경.
 
     while (current){
         if (element === current.element) {
@@ -283,11 +282,12 @@ this.getHead = function(){
 
 ---
 ## Tree
-![](http://www.the-pr.co.kr/news/photo/201705/18435_54247_3627.jpg)
+![](img/18435_54247_3627.jpg
+)
 
 ---
 ## Tree
-![](http://post.phinf.naver.net/MjAxNzA1MTJfMjk5/MDAxNDk0NTYyMzQ0MjMw.R0LvQSCWbHBcF6diubeQl806S-pYF4yWDRzsZ-WF9J4g.XP3s4UtaL327q2oqqpKbdYoJ8tUrSbRtA6DnG2Fs3Jgg.JPEG/%EC%9A%B0%EB%A6%AC%EA%B0%80%EC%A1%B1_%EA%B0%80%EA%B3%84%EB%8F%84-1.jpg?type=w1200)
+![](img/우리가족_가계도-1.jpg)
 
 ---
 ## Tree
@@ -314,13 +314,13 @@ this.getHead = function(){
 ## Binary Search Tree
 ```javascript
 function BinarySearchTree() {
-    var Node = function(key) {
-        this.key = key;
-        this.left = null;
-        this.right = null;
+    var node = function(key) {
+        this.key = key; // key라는 값이 있고
+        this.left = null; // 다음에 넣을 값
+        this.right = null; // 다음에 넣을 값
     };
 
-    var root = null;
+    var root = null; // 빈 루트
 
 ...
 
@@ -368,7 +368,13 @@ function BinarySearchTree() {
 ---
 ## Binary Search Tree - insert
 ```javascript
+
+var nodeList = [11,3,8,2,10,16,20,50,4,1,7,6,12,15]
 var tree = new BinarySearchTree();
+for (var i = 0, i < nodeList.length; i++){
+    tree.insert(nodeList);
+}
+
 ```
 `[11,7,15,5,3,9,8,10,13,12,14,20,18,25] + [6]`
 
@@ -554,7 +560,7 @@ gulp.task("sass", function(){
 gulp.task("concatcss", function(){
 	pump([
 		gulp.src([publicPath.src + 'css/concat1.css', publicPath.src + 'css/concat2.css']),
-		concat('concatenated.css'),
+		concat('concatenated.css'), // 생성할 파일명을 넣어주어야 함.
 		gulp.dest(publicPath.dest + 'css/')
 	]);
 });
@@ -581,6 +587,8 @@ gulp.task("default", ["uglify", "watch"]);
 
 ---
 ### watch
+!! 중요하므로 
+
 ```
 gulp.task("watch", function(){
 	gulp.watch(publicPath.src + 'js/*.js', ["uglify", "concat"]),

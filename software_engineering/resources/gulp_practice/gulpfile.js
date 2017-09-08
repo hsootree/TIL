@@ -36,4 +36,35 @@ gulp.task("concat", ["uglify"], function(){
         gulp.dest(publicPath.dest)
     ]);
 });
+
+gulp.task("imagemmin", function(){
+    pump([
+        gulp.src(publicPath.src + "*.jpg"),
+        imagemin(),
+        gulp,dest(publicPath.dest)
+    ]);
+})
+
+gulp.task("cleancss", function(){
+    pump([
+        gulp.src(puclicPath.src + "*.css"),
+        cleancss(),
+        gulp.dest(publicPath.dest)
+    ]);
+})
+
+
+
+
 gulp.task("default", ["concat"]);
+// 로그의 경우 일러. svg 로 익스포트 하고 svg 태그를 사용.
+
+
+
+
+
+
+
+
+
+
