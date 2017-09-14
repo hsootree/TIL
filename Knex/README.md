@@ -1,4 +1,4 @@
-# WPSN Knex 튜토리얼
+# Knex 튜토리얼
 
 Node.js를 통해 MySQL을 이용하는 방법에는 아래와 같이 여러 가지가 있습니다.
 
